@@ -1,1 +1,24 @@
-hello
+<html>
+<head>
+<script type="text/javascript">
+        function getParam(name)
+        {  
+            name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");  
+            var regexS = "[\\?&]"+name+"=([^&#]*)";  
+            var regex = new RegExp( regexS );  
+            var results = regex.exec(window.location.href);
+            if(results == null)
+                return "";  
+            else    
+                return results[1];
+        }
+       function getUrlData()
+       {
+            var uid = getParam("uid");
+            var age = getParam("age");
+       }
+</script>
+</head>
+<body onload="getUrlData()">
+</body>
+</html>
